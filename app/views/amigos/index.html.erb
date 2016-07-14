@@ -1,0 +1,41 @@
+<p id="notice">
+  <%= notice %>
+</p>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Lista dos amigos</div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Endereco</th>
+            <th>Aniversario</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @amigos.each do |amigo| %>
+            <tr>
+              <td><%= amigo.nome %></td>
+              <td><%= amigo.email %></td>
+              <td><%= amigo.telefone %></td>
+              <td><%= amigo.endereco %></td>
+              <td><%= amigo.aniversario %></td>
+              <td><%= link_to 'Exibir', amigo %></td>
+              <td><%= link_to 'Editar', edit_amigo_path(amigo) %></td>
+              <td><%= link_to 'Excluir', amigo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+    <br>
+
+    <button type="button" class="btn btn-lg btn-default">
+      <%= link_to 'Incluir Novo Amigo', new_amigo_path %>
+    </button>
+  </div>  
