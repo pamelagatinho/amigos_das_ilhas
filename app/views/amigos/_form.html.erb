@@ -2,7 +2,7 @@
   <% if @amigo.errors.any? %>
     <div class="alert alert-danger" role="alert">
      
-        <h2><%= pluralize(@amigo.errors.count, "error") %> erros não permitiram incluir um novo amigo:</h2>
+        <h2><%= pluralize(@amigo.errors.count, "error") %> não permitiram incluir um novo amigo:</h2>
 
         <ul>
         <% @amigo.errors.full_messages.each do |message| %>
@@ -13,27 +13,52 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.text_field :telefone %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco %><br>
-    <%= f.text_area :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :aniversario %><br>
-    <%= f.text_field :aniversario %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Novo amigo</h3>
+  </div> 
+
+  <div class="panel-body">   
+     
+     <div class="form-group">
+        <label >Nome</label>
+        <%= f.text_field :nome,  class: "form-control" %> 
+        </input>   
+     </div>
+        
+    <div class="form-group">
+        <label >Email</label>
+        <%= f.text_field :email,  class: "form-control" %> 
+        </input>   
+    </div>
+
+    <div class="form-group">
+        <label >Telefone</label>
+        <%= f.text_field :telefone,  class: "form-control" %> 
+        </input>   
+    </div>
+
+    <div class="form-group">
+        <label >Endereço</label>
+        <%= f.text_field :endereco,  class: "form-control" %> 
+        </input>   
+    </div>
+
+    <div class="form-group">
+        <label >Aniversário</label>
+        <%= f.text_field :aniversario,  class: "form-control" %> 
+        </input>   
+    </div>
+  
+
+      </div>
+      
+      
+      <div class="panel-footer">
+        <%= f.submit "Salvar", class: "btn btn-primary" %>
+      </button>
+        
+      </div>
+    </div>
   </div>
 <% end %>

@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Informações do amigo</h3>
+  </div> 
 <p>
   <strong>Nome:</strong>
   <%= @amigo.nome %>
@@ -24,6 +28,6 @@
   <strong>Aniversario:</strong>
   <%= @amigo.aniversario %>
 </p>
-
-<%= link_to 'Edit', edit_amigo_path(@amigo) %> |
-<%= link_to 'Back', amigos_path %>
+</div>
+<%= link_to 'Editar', edit_amigo_path(@amigo) %> |
+<%= link_to 'Voltar', amigos_path %>

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :amigos
 
-resource:amigos
-root 'amigos#index'
+root 'home#index'
+#  resources :amigos
+
+resources:amigos
+resources:users
+
+
 
 end
